@@ -62,5 +62,4 @@ Swagger UI will open automatically at /swagger, allowing you to explore and test
 | `DELETE`| `/todos/{id}` | Delete todo |
 
 ## License
-This project is licensed under the **MIT License**.  
-See `LICENSE` for details.
+This project is licensed under the **MIT License**. See `LICENSE` for details.
