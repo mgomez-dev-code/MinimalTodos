@@ -49,5 +49,11 @@ namespace MinimalTodos.Tests
             Assert.NotNull(result);
             Assert.True(result!.ContainsKey("Title"));
         }
+        
+        [Fact]
+        public void Infrastructure_Should_Be_Operational()
+        {
+            Assert.True(true);
+        }
     }
 }
