@@ -3,33 +3,38 @@ name: .NET 9 CI
 on:
   push:
     branches: [ main ]
-    paths-ignore:
-      - '**/*.md'
-      - 'docs/**'
+    paths:
+      - 'MinimalTodos.API/**/*.cs'
+      - 'MinimalTodos.Tests/**/*.cs'
+      - 'MinimalTodos.API/**/*.csproj'
+      - 'MinimalTodos.Tests/**/*.csproj'
+      - '.github/workflows/dotnet.yml'
   pull_request:
     branches: [ main ]
-    paths-ignore:
-      - '**/*.md'
-      - 'docs/**'
+    paths:
+      - 'MinimalTodos.API/**/*.cs'
+      - 'MinimalTodos.Tests/**/*.cs'
+      - 'MinimalTodos.API/**/*.csproj'
+      - 'MinimalTodos.Tests/**/*.csproj'
+      - '.github/workflows/dotnet.yml'
 
 jobs:
-  build-and-test:
-    runs-on: windows-latest
-
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout source
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup .NET 9 SDK
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: 9.0.x
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore MinimalTodos.sln
 
-      - name: Build solution
-        run: dotnet build --configuration Release --no-restore
+      - name: Build
+        run: dotnet build MinimalTodos.sln --no-restore --configuration Release
 
-      - name: Run tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+      - name: Test
+        run: dotnet test MinimalTodos.sln --no-build --configuration Release --verbosity normal
