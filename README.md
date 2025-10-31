@@ -3,7 +3,7 @@
 ![.NET](https://img.shields.io/badge/.NET-9-512BD4?logo=dotnet&logoColor=white)
 ![Language: C#](https://img.shields.io/badge/Language-C%23-239120?logo=csharp&logoColor=white)
 ![Tests: xUnit](https://img.shields.io/badge/Tests-xUnit-6aa84f)
-![.NET CI](https://github.com/mgomez-dev-code/MinimalTodos/actions/workflows/dotnet.yml/badge.svg)
+[![.NET CI](https://github.com/mgomez-dev-code/MinimalTodos/actions/workflows/dotnet.yml/badge.svg)](https://github.com/mgomez-dev-code/MinimalTodos/actions/workflows/dotnet.yml)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
 A small **Minimal API** built with **.NET 9** to manage a *Todo* list.
